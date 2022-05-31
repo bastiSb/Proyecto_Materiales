@@ -1,0 +1,120 @@
+CREATE TABLE Producto
+( id_producto int(4)  NOT NULL AUTO_INCREMENT,
+  nom_producto varchar(25) NOT NULL,
+  stock_producto int(4) NOT NULL,	
+  fk_id_categoria int(4) NOT NULL,
+  CONSTRAINT pk_producto PRIMARY KEY (id_producto)
+  
+);
+
+CREATE TABLE Detalle_solicitud
+( id_detalle_so int(4) NOT NULL AUTO_INCREMENT,
+  fk_id_producto int(4) NOT NULL,
+  estado_entrega char(1) NOT NULL,
+  comentario_detalle varchar(25),
+
+  CONSTRAINT pk_detalle_solicitud PRIMARY KEY (id_detalle_so)
+  
+);
+
+CREATE TABLE Categoria
+( id_categoria int(4) NOT NULL AUTO_INCREMENT,
+  nom_categoria varchar(25) NOT NULL,
+  CONSTRAINT pk_categoria PRIMARY KEY (id_categoria)
+);
+
+CREATE TABLE Enunciado_solicitud
+(
+	id_enunciado_so int(4)NOT NULL AUTO_INCREMENT,
+	fecha_solicitud date NOT NULL,
+	hora_solicitud time NOT NULL,
+	fk_id_detalle_so int(4) NOT NULL,
+    	fk_id_historial_so int(4) NOT NULL,
+   	fk_id_solicitante int(3) NOT NULL,
+	CONSTRAINT pk_enunciado_solicitud PRIMARY KEY(id_enunciado_so)
+	
+);
+
+CREATE TABLE Historial_solicitud
+(
+	id_historial_so int(4)NOT NULL AUTO_INCREMENT,
+	estado_solicitud char(1) NOT NULL,
+	fk_id_historial_so int(4),
+	CONSTRAINT pk_historial_solicitud PRIMARY KEY(id_historial_so)
+	
+);
+
+
+CREATE TABLE Solicitante
+(
+	id_solicitante int(3) NOT NULL AUTO_INCREMENT,
+	tipo_solicitante char(1) NOT NULL,
+	run_soli int(8) NOT NULL,
+	p_nombre_sol varchar(25) NOT NULL,
+    	s_nombre_sol varchar(25) NOT NULL,
+    	p_apellido_sol varchar(25) NOT NULL,
+    	s_apellido_sol varchar(25) NOT NULL,
+    	correo_ins_sol varchar(25) NOT NULL,
+    	num_tel_sol int(9) NOT NULL,
+    	fk_id_escuela int(4) NOT NULL,
+    	fk_id_seccion int(4) NOT NULL,
+    	fk_id_carrera int(4) NOT NULL,
+	CONSTRAINT pk_solicitante PRIMARY KEY(id_solicitante)
+);
+
+
+
+CREATE TABLE Escuela
+(
+	id_escuela int(4)NOT NULL AUTO_INCREMENT,
+	nombre_escuela varchar(25) NOT NULL,
+	CONSTRAINT pk_id_escuela PRIMARY KEY(id_escuela)
+	
+);
+
+
+
+CREATE TABLE Seccion
+(
+	id_seccion int(4)NOT NULL AUTO_INCREMENT,
+	nombre_seccion varchar(25) NOT NULL,
+	CONSTRAINT pk_id_seccion PRIMARY KEY(id_seccion)
+	
+);
+
+
+
+CREATE TABLE Carrera
+(
+	id_carrera int(4)NOT NULL AUTO_INCREMENT,
+	nombre_carrera varchar(25) NOT NULL,
+	CONSTRAINT pk_carrera PRIMARY KEY(id_carrera)
+	
+);
+
+ALTER TABLE producto add FOREIGN key(fk_id_categoria) REFERENCES categoria(id_categoria);
+ALTER TABLE detalle_solicitud add FOREIGN key(fk_id_producto) REFERENCES producto(id_producto);
+ALTER TABLE enunciado_solicitud add FOREIGN key(fk_id_detalle_so) REFERENCES detalle_solicitud(id_detalle_so);
+ALTER TABLE enunciado_solicitud add FOREIGN key(fk_id_solicitante) REFERENCES solicitante(id_solicitante);
+ALTER TABLE historial_solicitud add FOREIGN key(fk_id_historial_so) REFERENCES enunciado_solicitud(id_enunciado_so);
+ALTER TABLE solicitante add FOREIGN key(fk_id_escuela) REFERENCES escuela(id_escuela);
+ALTER TABLE solicitante add FOREIGN key(fk_id_seccion) REFERENCES seccion(id_seccion);
+ALTER TABLE solicitante add FOREIGN key(fk_id_carrera) REFERENCES carrera(id_carrera);
+
+
+
+*************************************************************************************************
+Poblar Tablas:
+
+INSERT INTO categoria (id_categoria, nom_categoria) VALUES
+	(0,'Cables'), (NULL,'Controles');
+
+INSERT INTO producto VALUES 
+	(NULL,'Cable Usb', 5, 1, 'Apple') 
+
+
+Consultar Tablas:
+SELECT categoria.id_categoria, categoria.nom_categoria, producto.nom_producto
+FROM categoria 
+JOIN producto 
+ON categoria.id_categoria = producto.fk_id_categoria

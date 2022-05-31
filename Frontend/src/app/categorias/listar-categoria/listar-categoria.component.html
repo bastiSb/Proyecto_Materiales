@@ -1,0 +1,29 @@
+<div class="card">
+    <div class="card-header">
+        Categorias
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre de la categoria</th>
+                    <th>Acciones </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <tr *ngFor="let cat of categorias">
+                    <td> {{cat.Id}} </td>
+                    <td> {{cat.Nombre}} </td>
+                    <td>
+                        <button type="button" class="btn-sm btn-primary" 
+                        routerLink= "/categorias/editar-categoria/{{cat.Id}}">Editar </button><td> 
+                        <div>
+                        <button type="button" class="btn-sm btn-danger" (click)="deleteCategoria(cat.Id)">Eliminar </button>
+                        </div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

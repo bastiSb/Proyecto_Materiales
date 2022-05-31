@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-header">
+        Productos
+    </div>
+    <div class="card-body">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre del Producto</th>
+                    <th>Marca</th>
+                    <th>Stock</th>
+                    <th>Acciones </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pro of productos">
+                    <td> {{pro.Id}} </td>
+                    <td> {{pro.Nombre}} </td>
+                    <td> {{pro.Marca}} </td>
+                    <td> {{pro.Stock}} </td>
+                    <td> 
+                        <button type="button" class="btn-sm btn-primary" 
+                            routerLink= "/productos/editar-producto/{{pro.Id}}">Editar </button></td>
+                        <td> 
+                        <div>
+                          <button type="button" class="btn-sm btn-danger" (click)="deleteProd(pro.Id)">Eliminar </button>
+                        </div></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
