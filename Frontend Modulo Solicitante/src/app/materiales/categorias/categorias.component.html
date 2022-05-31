@@ -1,0 +1,18 @@
+<div class="conteiner PItitulo">
+    <b><a>Categorias</a></b>
+  </div>
+  <div class="conteiner SIsubti">
+    <b><a>Información General</a></b>
+</div>
+
+<div class="row row-cols-1 row-cols-md-3 g-4 margen">
+    <div *ngFor="let cat of categorias" class="col g-4">
+        <div class="card h-100 ">
+            <a ><img class="card-img-top" src="..." alt="Card image cap"></a>
+            <div class="card-body">
+                <h5 class="card-title PIparrafo">{{cat.Nombre}}</h5>
+                <p class="card-text justify-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+        </div>
+    </div>
+</div>

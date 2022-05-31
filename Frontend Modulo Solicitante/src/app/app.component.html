@@ -1,0 +1,63 @@
+<nav class="navbar-xl navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <br><br>
+    <b><a class="navbar-brand tituloNav">Materiales Duoc UC</a>
+    <br>
+    <a class="navbar-brand tituloNav">Maipú</a></b>
+    <br><br>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="principal/inicio">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contacto</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             Cuenta
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="cuenta/mi-cuenta/">Mi cuenta</a></li>
+            <li><a class="dropdown-item" href="cuenta/cambio-pdw/">Cambio de Contraseña</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="cuenta/historial-pedidos/">Historial de Pedidos</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Materiales
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="materiales/categorias/">Categorias</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="materiales/materiales/">Todos los materiales</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Registro
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="registro">Registrarse</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="inicio-sesion">Iniciar Sesión</a></li>
+          </ul>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Buscar Materiales" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<hr>
+
+<div class="container">
+  <br>
+  <router-outlet></router-outlet>
+</div>

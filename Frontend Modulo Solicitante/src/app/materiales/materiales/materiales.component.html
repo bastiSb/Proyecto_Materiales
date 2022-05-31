@@ -1,0 +1,86 @@
+<div class="conteiner PItitulo">
+    <b><a>Materiales</a></b>
+  </div>
+  <div class="conteiner SIsubti">
+    <b><a>Información General</a></b>
+</div>
+
+<!-- <div class= "conteiner">
+        <div *ngFor="let pro of productos" class=" margen g-4">
+            <div class="col-4">
+                <div class="card">
+                    <img src="..." class="card-img-top" alt="...">
+                    <div class="card-block">
+                    <h5 class="card-title">{{pro.Nombre}}</h5>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur illum, a quas ratione sed accusantium reprehenderit dolorum explicabo repudiandae fugiat aliquid ea quaerat ipsam, autem facere doloribus consequuntur. Eum, non.</p>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="row row-cols-1 row-cols-md-3 g-4 margen">
+    <div *ngFor="let pro of productos" class="col g-4">
+        <div class="card h-100 ">
+            <a ><img class="card-img-top" src="..." alt="Card image cap"></a>
+            <div class="card-body">
+                <h5 class="card-title PIparrafo">{{pro.Nombre}}</h5>
+                <p class="card-text justify-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                <a href="#" class="btn btn-success">Agregar</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class=" margen row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="col">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
